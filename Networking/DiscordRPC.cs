@@ -17,7 +17,7 @@ namespace FH4RP.Networking
 
         public static void Initialize()
         {
-            discordClient = new DiscordRpcClient("798016065870495744");
+            discordClient = new DiscordRpcClient("906542327328280646");
             discordClient.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
             discordClient.OnReady += (sender, e) => { Console.WriteLine($"[Discord] Received ready from {e.User.Username}!"); };
             discordClient.OnPresenceUpdate += (sender, e) => { /*Console.WriteLine("[Discord] Received presence update!");*/ };
@@ -38,8 +38,8 @@ namespace FH4RP.Networking
                 Timestamps = elapsedTime,
                 Assets = new Assets()
                 {
-                    LargeImageKey = "forza-horizon-4-1024",
-                    SmallImageKey = "h4-small"
+                    LargeImageKey = "forza-horizon-5",
+                    SmallImageKey = "h5-small"
                 }
         });
         }

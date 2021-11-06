@@ -353,3 +353,6 @@ MigrationBackup/
 
 #removes bin folder (hopefully)
 bin/
+
+#vscode configs
+.vscode

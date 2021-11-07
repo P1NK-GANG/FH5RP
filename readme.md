@@ -1,4 +1,4 @@
-# Discord Rich Presence for Forza Horizon 4
+# Discord Rich Presence for Forza Horizon 5
 
 ## What does this do?
 
@@ -6,15 +6,15 @@ This program will allow you to display [Discord Rich Presence](https://discordap
 
 ## How does it work?
 
-Forza Horizon 4 has the ability to send car telemetry data out to a server. This is commonly used for racing simulation devices such as dashboards and hydraulic-powered racing seats. This program uses the same telemetry data to show car information in Discord.
+Forza Horizon 5 has the ability to send car telemetry data out to a server. This is commonly used for racing simulation devices such as dashboards and hydraulic-powered racing seats. This program uses the same telemetry data to show car information in Discord.
 
 ## Running the program
 
 ---
 
-**Note:** Due to limitations with Universal Windows Platform (UWP) apps, you ***must*** run the following command in an elevated command prompt window (CMD as admin) if you want to run this program on the same machine that you're playing Forza Horizon 4 on!
+**Note:** Due to limitations with Universal Windows Platform (UWP) apps, you ***must*** run the following command in an elevated command prompt window (CMD as admin) if you want to run this program on the same machine that you're playing Forza Horizon 5 on!
 
-Make sure Forza Horizon 4 is closed before running this command!
+Make sure Forza Horizon 5 is closed before running this command!
 
 `CheckNetIsolation.exe LoopbackExempt -a -n=Microsoft.SunriseBaseGame_8wekyb3d8bbwe`
 
@@ -22,9 +22,9 @@ Make sure Forza Horizon 4 is closed before running this command!
 
 Steps to configure Rich Presence:
 
-1. Download the [latest release](https://github.com/zackdevine/FH4RP/releases) and extract it somewhere on your desktop.
+1. Download the [latest release](https://github.com/P1NK-GANG/FH5RP/releases) and extract it somewhere on your desktop.
 2. Run the command above (only need to run it once per installation of Forza Horizon 4).
-3. In Forza Horizon 4, load into the game world, then go to `Settings > HUD and Gameplay` and scroll down to the bottom.
+3. In Forza Horizon 5, load into the game world, then go to `Settings > HUD and Gameplay` and scroll down to the bottom.
     - Set `Data Out` to `On`
     - Set `Data Out IP Address` to `127.0.0.1` (or whatever local IP address is running the application)
     - Set `Data Out IP Port` to `9909`
@@ -43,5 +43,3 @@ If you would like to contribute to this project, feel free to send PRs with upda
 ## References
 
 This project could not have been possible without the Turn 10 community and [Lachee's Discord RPC](https://github.com/Lachee/discord-rpc-csharp) package.
-
-Forza logo from [Forza Horizon 4 Icon Pack - Windows 10 by tfphoenix](https://www.deviantart.com/tfphoenix/art/Forza-Horizon-4-Icon-Pack-Windows-10-767768186) on DeviantArt.

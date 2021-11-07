@@ -356,3 +356,6 @@ bin/
 
 #vscode configs
 .vscode
+
+#jetbrains ides
+.idea

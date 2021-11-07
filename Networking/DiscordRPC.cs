@@ -32,16 +32,18 @@ namespace FH4RP.Networking
         public static void SetPresence(TelemetryData data)
         {
             discordClient.SetPresence(new RichPresence()
-            {
-                Details = VehicleDB.Instance.GetVehicle(data.CarOrdinal).GetVehicleInfo(),
-                State = $"[{data.CarClass.ToString()} | {data.CarPI}] - {data.GetMPH()} mph",
-                Timestamps = elapsedTime,
-                Assets = new Assets()
                 {
-                    LargeImageKey = "forza-horizon-5",
-                    SmallImageKey = "h5-small"
+                    Details = VehicleDB.Instance.GetVehicle(data.CarOrdinal).GetVehicleInfo(),
+                    State =
+                        $"[{data.CarClass.ToString()} | {data.CarPI}] - {data.GetConvertedSpeed()} {Program.Config.Unit}",
+                    Timestamps = elapsedTime,
+                    Assets = new Assets()
+                    {
+                        LargeImageKey = "forza-horizon-5",
+                        SmallImageKey = "h5-small"
+                    }
                 }
-        });
+            );
         }
 
     }

@@ -344,5 +344,25 @@ namespace FH4RP.DataStructs
         {
             return (int)(VelocityZ * 2.23694f);
         }
+        
+        public int GetKMH()
+        {
+            return (int)(VelocityZ * 3.6f);
+        }
+
+        public int GetConvertedSpeed()
+        {
+            switch (Program.Config.Unit)
+            {
+                case "MPH":
+                    return GetMPH();
+                case "KMH":
+                    return GetKMH();
+                case "MS":
+                    return (int)VelocityZ;
+                default:
+                    return 0;
+            }
+        }
     }
 }

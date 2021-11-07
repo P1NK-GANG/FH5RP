@@ -2,17 +2,24 @@
 using System.Timers;
 using FH4RP.Helpers;
 using FH4RP.Networking;
+using Microsoft.Extensions.Configuration;
 
 namespace FH4RP
 {
     class Program
     {
-        private static int ServerPort = 9909;
+        public static Config Config { get; private set; }
         public static TelemetryServer Server { get; private set; }
-
+        
         static void Main(string[] args)
         {
 
+            var settings = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json", true).Build();
+            var section = settings.GetSection(nameof(Config));
+            Config = section.Get<Config>() ?? new Config();
+            
             Console.WriteLine("Forza Horizon 5 | Discord Rich Presence App");
             Console.WriteLine("Developed by jaiden-d modified by PiSaucer and P1NK-GANG");
             Console.WriteLine();
@@ -22,7 +29,7 @@ namespace FH4RP
             Console.WriteLine();
             Console.WriteLine("> CheckNetIsolation.exe LoopbackExempt -a -n=Microsoft.SunriseBaseGame_8wekyb3d8bbwe");
             Console.WriteLine();
-            Server = new TelemetryServer(ServerPort);
+            Server = new TelemetryServer(Config.ServerPort);
             Server.Start();
 
             Networking.DiscordRPC.Initialize();
